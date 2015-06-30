@@ -45,7 +45,18 @@ Example:
         element: undefined,
         editor: undefined,
         properties: {
-
+            uploadUrl: {
+                type: String,
+                value: ""
+            },
+            uploadMethod: {
+                type: String,
+                value: "PUT"
+            },
+            uploadDataType: {
+                type: Object,
+                value: /(\.|\/)(gif|jpe?g|png)$/i
+            }
         },
         // Element Lifecycle
         ready: function() {
@@ -54,15 +65,18 @@ Example:
             that.element = document.querySelector("#medium-editor");
             that.editor = new MediumEditor(that.element);
 
+            console.log(that.uploadUrl);
+            console.log(that.uploadMethod);
+
             $("#medium-editor").mediumInsert({
                 editor: that.editor,
                 enabled: true,
                 addons: {
                     images: {
                         fileUploadOptions: {
-                            url: "",
-                            type: "",
-                            dataType: ""
+                            url: that.uploadUrl,
+                            type: that.uploadMethod,
+                            dataType: that.uploadDataType
                         },
                         styles: {
                             flc: { // full-left-caption
