@@ -1,0 +1,84 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<link rel="stylesheet" href="bower_components/medium-editor/dist/css/medium-editor.min.css">
+<link rel="stylesheet" href="bower_components/medium-editor/dist/css/themes/default.min.css" id="medium-editor-theme">
+
+<!-- Font Awesome for awesome icons. You can redefine icons used in a plugin configuration -->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<!-- Medium Editor Insert plugin, for inserting picture and videos -->
+<link rel="stylesheet" href="bower_components/medium-editor-insert-plugin/dist/css/medium-editor-insert-plugin.min.css">
+<link rel="stylesheet" href="bower_components/medium-editor-insert-plugin/dist/css/medium-editor-insert-plugin-frontend.min.css">
+
+<link rel="stylesheet" href="styles/medium-editor.css">
+
+<script type="text/javascript" src="bower_components/medium-editor/dist/js/medium-editor.min.js"></script>
+<!-- Medium Editor Insert plugin dependencies -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/handlebars/handlebars.runtime.min.js"></script>
+<script src="bower_components/jquery-sortable/source/js/jquery-sortable-min.js"></script>
+<!-- Unfortunately, jQuery File Upload Plugin has a few more dependencies itself -->
+<script src="bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="bower_components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<!-- Medium Editor Insert plugin itself -->
+<script src="bower_components/medium-editor-insert-plugin/dist/js/medium-editor-insert-plugin.js"></script>
+
+<!--
+An element providing a solution to no problem in particular.
+
+Example:
+
+<seed-element></seed-element>
+
+@demo
+-->
+<dom-module id="medium-editor">
+    <template>
+        <div class="editable" id="medium-editor">
+        </div>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: "medium-editor",
+        element: undefined,
+        editor: undefined,
+        properties: {
+
+        },
+        // Element Lifecycle
+        ready: function() {
+            var that = this;
+
+            that.element = document.querySelector("#medium-editor");
+            that.editor = new MediumEditor(that.element);
+
+            $("#medium-editor").mediumInsert({
+                editor: that.editor,
+                enabled: true,
+                addons: {
+                    images: {
+                        fileUploadOptions: {
+                            url: "",
+                            type: "",
+                            dataType: ""
+                        },
+                        styles: {
+                            flc: { // full-left-caption
+                                label: "<span class='fa fa-times'></span>",
+                            }
+                        }
+                    },
+                    embeds: {
+                        styles: {
+                            flc: { // full-left-caption
+                                label: "<span class='fa fa-times'></span>",
+                            }
+                        }
+                    }
+                }
+            });
+        },
+    });
+    </script>

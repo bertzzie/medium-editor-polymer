@@ -1,0 +1,38 @@
+{
+  "name": "medium-editor-polymer",
+  "version": "0.0.1",
+  "authors": [
+    "Alex Xandra Albert Sim <bertzzie@gmail.com>"
+  ],
+  "description": "Polymer integration for MediumEditor project.",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "medium",
+    "editor",
+    "polymer",
+    "integration",
+    "web-component",
+    "web-components"
+  ],
+  "main": "medium-editor.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "demo"
+  ],
+  "dependencies": {
+    "medium-editor": "~5.1.0",
+    "polymer": "Polymer/polymer#^1.0.0",
+    "medium-editor-insert-plugin": "^2.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  }
+}

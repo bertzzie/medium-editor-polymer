@@ -1,0 +1,17 @@
+{
+  "name": "medium-editor-polymer",
+  "version": "0.0.1",
+  "description": "Polymer integration for MediumEditor project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "medium",
+    "editor",
+    "polymer",
+    "integration"
+  ],
+  "author": "Alex Xandra Albert Sim <bertzzie@gmail.com>",
+  "license": "MIT"
+}

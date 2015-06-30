@@ -1,0 +1,41 @@
+.medium-editor-insert-plugin .medium-insert-buttons {
+    color: #B1B1B1;
+}
+
+.medium-insert-embeds-full-left-caption figure,
+.medium-insert-images-full-left-caption figure {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.medium-insert-embeds-flc figure figcaption:before,
+.medium-insert-images-flc figure figcaption:before {
+    border-top: 1px solid rgba(0, 0, 0, 0.75);
+    content: "";
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 70%;
+    width: 30%;
+}
+
+.medium-insert-embeds-flc figure figcaption:after,
+.medium-insert-images-flc figure figcaption:after {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.medium-insert-embeds-flc figure figcaption,
+.medium-insert-images-flc figure figcaption {
+    color: #B1B1B1;
+    left: -200px;
+    top: 0;
+    position: absolute;
+    text-align: right;
+    width: 185px;
+}
+
+.medium-editor-placeholder::after {
+    color: #B1B1B1;
+}
+
