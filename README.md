@@ -16,12 +16,12 @@ There's still several things needed to be done to improve the projects:
 First step is to include the editor in your HTML file:
 
     <script src="/path/to/webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="path/to/medium-editor.html">
+    <link rel="import" href="path/to/medium-editor-polymer.html">
 
 `webcomponents` is a library provided by Polymer to add web component support to browsers that don't support it yet. After importing both of those, you can directly use the component in your HTML:
 
-    <medium-editor upload-url="/image/upload/path" upload-method="PUT">
-    </medium-editor>
+    <medium-editor-polymer upload-url="/image/upload/path" upload-method="PUT">
+    </medium-editor-polymer>
 
 The editor currently has three attributes you can use:
 
