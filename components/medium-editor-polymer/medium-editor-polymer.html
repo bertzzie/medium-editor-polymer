@@ -1,0 +1,137 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<link rel="stylesheet" href="../medium-editor/dist/css/medium-editor.min.css">
+<link rel="stylesheet" href="../medium-editor/dist/css/themes/default.min.css" id="medium-editor-theme">
+
+<!-- Font Awesome for awesome icons. You can redefine icons used in a plugin configuration -->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<!-- Medium Editor Insert plugin, for inserting picture and videos -->
+<link rel="stylesheet" href="../medium-editor-insert-plugin/dist/css/medium-editor-insert-plugin.min.css">
+<link rel="stylesheet" href="../medium-editor-insert-plugin/dist/css/medium-editor-insert-plugin-frontend.min.css">
+
+<link rel="stylesheet" href="styles/medium-editor.css">
+
+<script type="text/javascript" src="../medium-editor/dist/js/medium-editor.min.js"></script>
+<!-- Medium Editor Insert plugin dependencies -->
+<script src="../jquery/dist/jquery.min.js"></script>
+<script src="../handlebars/handlebars.runtime.min.js"></script>
+<script src="../jquery-sortable/source/js/jquery-sortable-min.js"></script>
+<!-- Unfortunately, jQuery File Upload Plugin has a few more dependencies itself -->
+<script src="../blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="../blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<script src="../blueimp-file-upload/js/jquery.fileupload.js"></script>
+<!-- Medium Editor Insert plugin itself -->
+<script src="../medium-editor-insert-plugin/dist/js/medium-editor-insert-plugin.js"></script>
+
+<!--
+An element to provide text editor like on medium.com.
+
+Example:
+
+    <medium-editor-polymer upload-url="/path/to/image/upload"
+                   upload-method="PUT"
+                   upload-data-type="/(\.|\/)(gif|jpe?g|png)$/i">
+    </medium-editor-polymer>
+
+@demo
+-->
+<dom-module id="medium-editor-polymer">
+    <template>
+        <div class="editable" id="medium-editor">
+        </div>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: "medium-editor-polymer",
+
+        /**
+         * DOM element of the editor we want.
+         *
+         * @name MediumEditor#element
+         * @type {HTMLDivElement}
+         * @default undefined
+         */
+        element: undefined,
+
+        /**
+         * MediumEditor created from {@link MediumEditor#element}
+         *
+         * @name MediumEditor#editor
+         * @type {HTMLDivElement}
+         * @default undefined
+         */
+        editor: undefined,
+
+        properties: {
+            uploadUrl: {
+                type: String,
+                value: ""
+            },
+            uploadMethod: {
+                type: String,
+                value: "PUT"
+            },
+            uploadDataType: {
+                type: Object,
+                value: /(\.|\/)(gif|jpe?g|png)$/i
+            }
+        },
+
+        // Element Lifecycle
+        ready: function() {
+            var that = this;
+
+            that.element = document.querySelector("#medium-editor");
+            that.editor = new MediumEditor(that.element);
+
+            $("#medium-editor").mediumInsert({
+                editor: that.editor,
+                enabled: true,
+                addons: {
+                    images: {
+                        fileUploadOptions: {
+                            url: that.uploadUrl,
+                            type: that.uploadMethod,
+                            dataType: that.uploadDataType
+                        },
+                        styles: {
+                            flc: { // full-left-caption
+                                label: "<span class='met image-flc'></span>",
+                            },
+                            wide: { 
+                                label: "<span class='met image-wide'></span>",
+                            },
+                            left: {
+                                label: "<span class='met image-left'></span>",
+                            },
+                            right: {
+                                label: "<span class='met image-right'></span>",
+                            },
+                            grid: {
+                                label: "<span class='met image-grid'></span>",
+                            }
+                        }
+                    },
+                    embeds: {
+                        styles: {
+                            wide: {
+                                label: "<span class='met video-wide'></span>",
+                            },
+                            left: {
+                                label: "<span class='met video-left'></span>",
+                            },
+                            right: {
+                                label: "<span class='met video-right'></span>",
+                            },
+                            flc: { // full-left-caption
+                                label: "<span class='met video-flc'></span>",
+                            }
+                        }
+                    }
+                }
+            });
+        },
+    });
+</script>

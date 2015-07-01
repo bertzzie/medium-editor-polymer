@@ -1,0 +1,99 @@
+@font-face {
+	font-family: 'medium-editor-toolbar';
+	src:url('../fonts/medium-editor-toolbar.eot?s4zetg');
+	src:url('../fonts/medium-editor-toolbar.eot?#iefixs4zetg') format('embedded-opentype'),
+		  url('../fonts/medium-editor-toolbar.ttf?s4zetg') format('truetype'),
+		  url('../fonts/medium-editor-toolbar.woff?s4zetg') format('woff'),
+		  url('../fonts/medium-editor-toolbar.svg?s4zetg#medium-editor-toolbar') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.met {
+	font-family: 'medium-editor-toolbar';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.image-flc:before {
+	content: "\e600";
+}
+.image-grid:before {
+	content: "\e601";
+}
+.image-left:before {
+	content: "\e602";
+}
+.image-right:before {
+	content: "\e603";
+}
+.image-wide:before {
+	content: "\e604";
+}
+.video-flc:before {
+	content: "\e605";
+}
+.video-left:before {
+	content: "\e606";
+}
+.video-right:before {
+	content: "\e607";
+}
+.video-wide:before {
+	content: "\e608";
+}
+
+.medium-editor-insert-plugin .medium-insert-buttons {
+    color: #B1B1B1;
+}
+
+.medium-insert-embeds-full-left-caption figure,
+.medium-insert-images-full-left-caption figure {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.medium-insert-embeds-flc figure figcaption:before,
+.medium-insert-images-flc figure figcaption:before {
+    border-top: 1px solid rgba(0, 0, 0, 0.75);
+    content: "";
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 70%;
+    width: 30%;
+}
+
+.medium-insert-embeds-flc figure figcaption:after,
+.medium-insert-images-flc figure figcaption:after {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.medium-insert-embeds-flc figure figcaption,
+.medium-insert-images-flc figure figcaption {
+    color: #B1B1B1;
+    left: -200px;
+    top: 0;
+    position: absolute;
+    text-align: right;
+    width: 185px;
+}
+
+.medium-editor-placeholder::after {
+    color: #B1B1B1;
+}
+
+.medium-insert-embeds.medium-insert-embeds-left,
+.medium-insert-embeds.medium-insert-embeds-right {
+    width: 50%;
+}
+

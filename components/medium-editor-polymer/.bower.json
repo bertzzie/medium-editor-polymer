@@ -1,0 +1,48 @@
+{
+  "name": "medium-editor-polymer",
+  "authors": [
+    "Alex Xandra Albert Sim <bertzzie@gmail.com>"
+  ],
+  "description": "Polymer integration for MediumEditor project.",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "medium",
+    "editor",
+    "polymer",
+    "integration",
+    "web-component",
+    "web-components"
+  ],
+  "main": "medium-editor.html",
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "demo"
+  ],
+  "dependencies": {
+    "medium-editor": "~5.1.0",
+    "polymer": "Polymer/polymer#^1.0.0",
+    "medium-editor-insert-plugin": "^2.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  },
+  "homepage": "https://github.com/bertzzie/medium-editor-polymer",
+  "_release": "6856f8a267",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "6856f8a26786e326e048db0a49d50081e1dce0da"
+  },
+  "_source": "git://github.com/bertzzie/medium-editor-polymer.git",
+  "_target": "master",
+  "_originalSource": "bertzzie/medium-editor-polymer",
+  "_direct": true
+}
