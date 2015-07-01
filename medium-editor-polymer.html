@@ -28,14 +28,14 @@ An element to provide text editor like on medium.com.
 
 Example:
 
-    <medium-editor upload-url="/path/to/image/upload"
+    <medium-editor-polymer upload-url="/path/to/image/upload"
                    upload-method="PUT"
                    upload-data-type="/(\.|\/)(gif|jpe?g|png)$/i">
-    </medium-editor>
+    </medium-editor-polymer>
 
 @demo
 -->
-<dom-module id="medium-editor">
+<dom-module id="medium-editor-polymer">
     <template>
         <div class="editable" id="medium-editor">
         </div>
@@ -44,7 +44,7 @@ Example:
 
 <script>
     Polymer({
-        is: "medium-editor",
+        is: "medium-editor-polymer",
 
         /**
          * DOM element of the editor we want.
