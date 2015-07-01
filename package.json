@@ -1,5 +1,5 @@
 {
-  "name": "medium-editor-polymer",
+  "name": "medium-editor",
   "version": "0.0.1",
   "description": "Polymer integration for MediumEditor project.",
   "main": "index.js",

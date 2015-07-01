@@ -24,11 +24,14 @@
 <script src="bower_components/medium-editor-insert-plugin/dist/js/medium-editor-insert-plugin.js"></script>
 
 <!--
-An element providing a solution to no problem in particular.
+An element to provide text editor like on medium.com.
 
 Example:
 
-<seed-element></seed-element>
+    <medium-editor upload-url="/path/to/image/upload"
+                   upload-method="PUT"
+                   upload-data-type="/(\.|\/)(gif|jpe?g|png)$/i">
+    </medium-editor>
 
 @demo
 -->
@@ -42,8 +45,25 @@ Example:
 <script>
     Polymer({
         is: "medium-editor",
+
+        /**
+         * DOM element of the editor we want.
+         *
+         * @name MediumEditor#element
+         * @type {HTMLDivElement}
+         * @default undefined
+         */
         element: undefined,
+
+        /**
+         * MediumEditor created from {@link MediumEditor#element}
+         *
+         * @name MediumEditor#editor
+         * @type {HTMLDivElement}
+         * @default undefined
+         */
         editor: undefined,
+
         properties: {
             uploadUrl: {
                 type: String,
@@ -58,6 +78,7 @@ Example:
                 value: /(\.|\/)(gif|jpe?g|png)$/i
             }
         },
+
         // Element Lifecycle
         ready: function() {
             var that = this;
