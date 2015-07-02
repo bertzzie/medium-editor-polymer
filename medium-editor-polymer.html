@@ -76,6 +76,10 @@ Example:
             uploadDataType: {
                 type: Object,
                 value: /(\.|\/)(gif|jpe?g|png)$/i
+            },
+            uploadFieldName: {
+                type: String,
+                default: "image"
             }
         },
 
@@ -94,7 +98,8 @@ Example:
                         fileUploadOptions: {
                             url: that.uploadUrl,
                             type: that.uploadMethod,
-                            dataType: that.uploadDataType
+                            dataType: that.uploadDataType,
+                            paramName: that.uploadFieldName
                         },
                         styles: {
                             flc: { // full-left-caption
