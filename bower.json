@@ -34,5 +34,8 @@
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "web-component-tester": "*"
+  },
+  "resolutions": {
+    "medium-editor": "~5.1.0"
   }
 }
