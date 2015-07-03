@@ -99,7 +99,12 @@ Example:
                             url: that.uploadUrl,
                             type: that.uploadMethod,
                             dataType: that.uploadDataType,
-                            paramName: that.uploadFieldName
+                            paramName: that.uploadFieldName,
+                            fail: function (e, data) {
+                                that.fire('image-upload-failed', data, {
+                                    node: that
+                                });
+                            }
                         },
                         styles: {
                             flc: { // full-left-caption
