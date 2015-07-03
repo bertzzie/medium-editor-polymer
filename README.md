@@ -25,11 +25,20 @@ First step is to include the editor in your HTML file:
 
 The editor currently has three attributes you can use:
 
-     Attribute     |  Type  | Value
--------------------|--------|---------------------------------------------------------------------
-`upload-url`       | String | URL of your server that can receive image upload. Default: ""
-`upload-method`    | String | HTTP Method for `upload-url`. Default: `PUT`
-`upload-data-type` | Object | Data type your server recieve. Default: `/(\.|\/)(gif|jpe?g|png)$/i`
+     Attribute      |  Type  | Value
+--------------------|--------|--------------------------------------------------------------------------
+`upload-url`        | String | URL of your server that can receive image upload. Default: ""
+`upload-method`     | String | HTTP Method for `upload-url`. Default: `PUT`
+`upload-data-type`  | Object | Data type your server recieve. Default: `/(\.|\/)(gif|jpe?g|png)$/i`
+`upload-field-name` | String | The parameter name you'd like to use for uploaded image. Default: "image"
+
+## Events
+
+The editor support several events related to the content:
+
+       Attribute      | Value
+----------------------|------------------------------------------------------------------------------
+`image-upload-failed` | Event triggered when image upload process failed due to server or other issue
 
 ## License
 
