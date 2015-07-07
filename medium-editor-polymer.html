@@ -84,6 +84,11 @@ Example:
             }
         },
 
+        getEditorContent: function () {
+            var ec = this.editor.serialize();
+            return ec["medium-editor"]["value"];
+        },
+
         // Element Lifecycle
         ready: function() {
             var that = this;
