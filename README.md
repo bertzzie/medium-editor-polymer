@@ -32,6 +32,14 @@ The editor currently has three attributes you can use:
 `upload-data-type`  | Object | Data type your server recieve. Default: `/(\.|\/)(gif|jpe?g|png)$/i`
 `upload-field-name` | String | The parameter name you'd like to use for uploaded image. Default: "image"
 
+## Methods
+
+There's several methods you can use with the editor, mostly for getting content out of it:
+
+       Method      |  Parameter  | Return Value | Description
+-------------------|-------------|--------------|-------------------------------------------------------------------------------------------
+`getEditorContent` |      -      |    String    | Get the editor's HTML content. You can use this to send the content to server for example.
+
 ## Events
 
 The editor support several events related to the content:
