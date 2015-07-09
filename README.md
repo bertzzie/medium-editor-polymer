@@ -27,7 +27,20 @@ First step is to include the editor in your HTML file:
 </medium-editor-polymer>
 ```
 
-The editor currently has three attributes you can use:
+If you want to insert some content by default for the editor, you can also directly insert some content inside the element, just like a regular HTML element:
+
+```html
+<medium-editor-polymer upload-url="/image/upload/path" upload-method="PUT">
+    <h2>This is some example content</h2>
+    <p> 
+        You can insert anything here, 
+        from some random text to the text 
+        you want to be edited.
+    </p>
+</medium-editor-polymer>
+```
+
+The editor currently has four attributes you can use:
 
      Attribute      |  Type  | Value
 --------------------|--------|--------------------------------------------------------------------------
